@@ -1,35 +1,38 @@
-## tealicious - beginner - level 6
+## tealicious - beginner - level 8
 
-### _The wall behind you feels a bit further away in this room. And you hear more cries for help._
+### _You hear the mumbling of wizards. Beware of their deadly wands! Good thing you found a bow._
 
-> **TIP:** You can walk backward by passing `'backward'` as an argument to `walk()`. Same goes for `feel()`, `rescue()` and `attack()`. Archers have a limited attack distance.
+> **TIP:** Use `warrior.look()` to determine your surroundings, and `warrior.shoot()` to fire an arrow.
 
-> **CLUE:** Walk backward if you're taking damage from afar and don't have enough health to attack. You may also want to consider walking backward until you hit a wall. Use `warrior.feel().isWall()` to see if there's a wall.
+> **CLUE:** Wizards are deadly but low in health. Kill them before they've time to attack.
 
 ### Floor Map
 
 ```
-╔════════╗
-║C @ S aa║
-╚════════╝
+╔══════╗
+║@ Cww>║
+╚══════╝
 
-C = Captive (1 HP)
 @ = tealicious (20 HP)
-S = Thick Sludge (24 HP)
-a = Archer (7 HP)
+C = Captive (1 HP)
+w = Wizard (3 HP)
+> = stairs
 ```
 
 ### Abilities
 
 #### Actions (only one per turn)
 
+* `warrior.shoot()`: Shoot your bow & arrow in the given direction (forward by default) dealing 3 HP of damage to the first unit in a range of 3 spaces.
 * `warrior.walk()`: Move one space in the given direction (forward by default).
 * `warrior.attack()`: Attack a unit in the given direction (forward by default) dealing 5 HP of damage.
 * `warrior.rest()`: Gain 10% of max health back, but do nothing more.
-* `warrior.rescue()`: Rescue a captive from his chains (earning 20 points) in the given direction (forward by default).
+* `warrior.rescue()`: Rescue a captive from his chains (earning a reward) in the given direction (forward by default).
+* `warrior.pivot()`: Rotate in the given direction (backward by default).
 
 #### Senses
 
+* `warrior.look()`: Returns an array of up to 3 spaces in the given direction (forward by default).
 * `warrior.feel()`: Return the adjacent space in the given direction (forward by default).
 * `warrior.health()`: Return an integer representing your health.
 
